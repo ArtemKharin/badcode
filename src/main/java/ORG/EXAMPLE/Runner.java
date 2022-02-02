@@ -3,31 +3,35 @@ package ORG.EXAMPLE;
 import ORG.EXAMPLE.moDEL.NotifiableProduct;
 import ORG.EXAMPLE.moDEL.Product;
 import ORG.EXAMPLE.moDEL.ProductBundle;
-import ORG.EXAMPLE.utils.ProductUtils;
+import ORG.EXAMPLE.repository.ProductRepository;
+import ORG.EXAMPLE.utils.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Runner {
     public static void main(String[] args) {
-        ProductUtils utils = new ProductUtils();
+        ProductRepository repository = new ProductRepository();
+        ProductGenerator productGenerator = new ProductGenerator();
+        ProductSaver saver = new ProductSaver();
+        ProductGet productGet = new ProductGet();
         List<Product> products = new ArrayList<>();
-        products.add(utils.generateRandomProduct());
-        products.add(utils.generateRandomProduct());
-        products.add(utils.generateRandomProduct());
-        products.add(utils.generateRandomProduct());
-        products.add(utils.generateRandomProduct());
-        products.add(utils.generateRandomProduct());
-        products.add(utils.generateRandomProduct());
+        products.add(productGenerator.generateRandomProduct());
+        products.add(productGenerator.generateRandomProduct());
+        products.add(productGenerator.generateRandomProduct());
+        products.add(productGenerator.generateRandomProduct());
+        products.add(productGenerator.generateRandomProduct());
+        products.add(productGenerator.generateRandomProduct());
+        products.add(productGenerator.generateRandomProduct());
         products.forEach(it -> {
             if (it instanceof ProductBundle) {
-                utils.saveProductBundle((ProductBundle) it);
+                saver.saveProductBundle((ProductBundle) it, repository);
             } else if (it instanceof NotifiableProduct) {
-                utils.saveNotifiableProduct((NotifiableProduct) it);
+                saver.saveNotifiableProduct((NotifiableProduct) it, repository);
             }
         });
 
-        System.out.println(utils.getAll());
-        System.out.println("notifications sent: " + utils.filterNotifiableProductsAndSendNotifications());
+        System.out.println(productGet.getAll(repository));
+        System.out.println("notifications sent: " + productGet.sendNotifications(productGet.getListNotifiableProduct(repository)));
     }
 }

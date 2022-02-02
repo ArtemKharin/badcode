@@ -3,12 +3,8 @@ package ORG.EXAMPLE.moDEL;
 import lombok.Setter;
 
 @Setter
-public class ProductBundle extends NotifiableProduct{
+public class ProductBundle extends Product implements AmountInBundle {
     protected int amount;
-    @Override
-    public String generateAddressForNotification() {
-        throw new UnsupportedOperationException("Bundle can't be notified");
-    }
 
     @Override
     public int getAmountInBundle() {

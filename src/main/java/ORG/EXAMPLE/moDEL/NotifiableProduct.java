@@ -5,8 +5,7 @@ import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class NotifiableProduct extends Product{
-    protected String channel;
+public class NotifiableProduct extends Product implements GenerateAddress {
 
     @Override
     public String generateAddressForNotification() {
@@ -22,10 +21,5 @@ public class NotifiableProduct extends Product{
                 ", title='" + title + '\'' +
                 ", price=" + price +
                 '}';
-    }
-
-    @Override
-    public int getAmountInBundle() {
-        throw new UnsupportedOperationException("Product is not a bundle");
     }
 }
