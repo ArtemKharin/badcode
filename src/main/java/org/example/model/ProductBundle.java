@@ -1,14 +1,14 @@
-package ORG.EXAMPLE.moDEL;
+package org.example.model;
 
-import lombok.Setter;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
-@Setter
-public class ProductBundle extends NotifiableProduct{
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+@Data
+public class ProductBundle extends Product implements Bundler {
     protected int amount;
-    @Override
-    public String generateAddressForNotification() {
-        throw new UnsupportedOperationException("Bundle can't be notified");
-    }
 
     @Override
     public int getAmountInBundle() {
@@ -18,7 +18,6 @@ public class ProductBundle extends NotifiableProduct{
     @Override
     public String getBasicInfo() {
         return "ProductBundle{" +
-                "channel='" + channel + '\'' +
                 ", id=" + id +
                 ", available=" + available +
                 ", title='" + title + '\'' +

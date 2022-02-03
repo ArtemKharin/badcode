@@ -1,11 +1,13 @@
-package ORG.EXAMPLE.moDEL;
+package org.example.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 @EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
 @Data
-public class NotifiableProduct extends Product{
+public class NotifiableProduct extends Product implements Notifiable{
     protected String channel;
 
     @Override
@@ -22,10 +24,5 @@ public class NotifiableProduct extends Product{
                 ", title='" + title + '\'' +
                 ", price=" + price +
                 '}';
-    }
-
-    @Override
-    public int getAmountInBundle() {
-        throw new UnsupportedOperationException("Product is not a bundle");
     }
 }
