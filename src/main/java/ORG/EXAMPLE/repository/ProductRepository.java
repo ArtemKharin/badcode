@@ -1,6 +1,7 @@
-package ORG.EXAMPLE.repository;
+package org.example.repository;
 
-import ORG.EXAMPLE.moDEL.Product;
+
+import org.example.model.Product;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,11 +11,11 @@ import java.util.Map;
 public class ProductRepository {
     private Map<Long, Product> storage = new HashMap<>();
 
-    public Product save(Product product) {
-        return storage.put(product.getId(), product);
+    public void saveProduct(Product product) {
+        storage.put(product.getId(), product);
     }
 
-    public List<Product> getAll() {
+    public List<Product> getAllProducts() {
         return new ArrayList<>(storage.values());
     }
 }
