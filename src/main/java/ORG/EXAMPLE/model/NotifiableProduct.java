@@ -1,16 +1,19 @@
-package ORG.EXAMPLE.moDEL;
+package ORG.EXAMPLE.model;
 
+import ORG.EXAMPLE.interfaces.ProductAddressGeneratorForNotification;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class NotifiableProduct extends Product{
-    protected String channel;
+public class NotifiableProduct extends Product implements ProductAddressGeneratorForNotification {
+    private int counter = 1;
+    private String channel;
+
 
     @Override
     public String generateAddressForNotification() {
-        return "somerandommail@gmail.com";
+        return "somerandommail" + counter++ +"@gmail.com";
     }
 
     @Override
@@ -22,10 +25,5 @@ public class NotifiableProduct extends Product{
                 ", title='" + title + '\'' +
                 ", price=" + price +
                 '}';
-    }
-
-    @Override
-    public int getAmountInBundle() {
-        throw new UnsupportedOperationException("Product is not a bundle");
     }
 }

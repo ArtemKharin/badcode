@@ -1,14 +1,17 @@
 package ORG.EXAMPLE.repository;
 
-import ORG.EXAMPLE.moDEL.Product;
+import ORG.EXAMPLE.model.Product;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class ProductRepository {
-    private Map<Long, Product> storage = new HashMap<>();
+    private final Map<Long, Product> storage;
+
+    public ProductRepository(Map<Long, Product> storage) {
+        this.storage = storage;
+    }
 
     public Product save(Product product) {
         return storage.put(product.getId(), product);

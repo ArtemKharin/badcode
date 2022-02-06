@@ -1,9 +1,10 @@
-package ORG.EXAMPLE.moDEL;
+package ORG.EXAMPLE.model;
 
+import ORG.EXAMPLE.interfaces.ProductBasicInfo;
 import lombok.Data;
 
 @Data
-public abstract class Product implements IProduct{
+public abstract class Product implements ProductBasicInfo {
     protected long id;
     protected boolean available;
     protected String title;
