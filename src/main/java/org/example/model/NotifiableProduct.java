@@ -1,11 +1,11 @@
-package ORG.EXAMPLE.moDEL;
+package org.example.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class NotifiableProduct extends Product implements GenerateAddress {
+public class NotifiableProduct extends Product implements Address {
 
     @Override
     public String generateAddressForNotification() {

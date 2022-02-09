@@ -1,9 +1,9 @@
-package ORG.EXAMPLE.moDEL;
+package org.example.model;
 
 import lombok.Data;
 
 @Data
-public abstract class Product implements BasicInfo {
+public abstract class Product implements Info {
     protected long id;
     protected boolean available;
     protected String title;

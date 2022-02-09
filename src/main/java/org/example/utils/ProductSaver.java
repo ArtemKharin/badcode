@@ -1,8 +1,8 @@
-package ORG.EXAMPLE.utils;
+package org.example.utils;
 
-import ORG.EXAMPLE.moDEL.NotifiableProduct;
-import ORG.EXAMPLE.moDEL.ProductBundle;
-import ORG.EXAMPLE.repository.ProductRepository;
+import org.example.model.NotifiableProduct;
+import org.example.model.ProductBundle;
+import org.example.repository.ProductRepository;
 
 public class ProductSaver {
 

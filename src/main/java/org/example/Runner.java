@@ -1,10 +1,12 @@
-package ORG.EXAMPLE;
+package org.example;
 
-import ORG.EXAMPLE.moDEL.NotifiableProduct;
-import ORG.EXAMPLE.moDEL.Product;
-import ORG.EXAMPLE.moDEL.ProductBundle;
-import ORG.EXAMPLE.repository.ProductRepository;
-import ORG.EXAMPLE.utils.*;
+import org.example.model.NotifiableProduct;
+import org.example.model.Product;
+import org.example.model.ProductBundle;
+import org.example.repository.ProductRepository;
+import org.example.utils.ProductGenerator;
+import org.example.utils.ProductGet;
+import org.example.utils.ProductSaver;
 
 import java.util.ArrayList;
 import java.util.List;

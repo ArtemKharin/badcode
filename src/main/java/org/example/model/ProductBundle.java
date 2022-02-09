@@ -1,9 +1,9 @@
-package ORG.EXAMPLE.moDEL;
+package org.example.model;
 
 import lombok.Setter;
 
 @Setter
-public class ProductBundle extends Product implements AmountInBundle {
+public class ProductBundle extends Product implements AmountIn {
     protected int amount;
 
     @Override
