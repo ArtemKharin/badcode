@@ -1,7 +1,7 @@
-package ORG.EXAMPLE.utils;
+package org.example.utils;
 
-import ORG.EXAMPLE.model.Product;
-import ORG.EXAMPLE.repository.ProductRepository;
+import org.example.repository.ProductRepository;
+import org.example.model.Product;
 
 import java.util.List;
 import java.util.Map;
@@ -20,6 +20,5 @@ public class ProductUtils {
     public List<Product> getAll() {
         return repository.getAll();
     }
-
 
 }

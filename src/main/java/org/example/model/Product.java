@@ -1,6 +1,6 @@
-package ORG.EXAMPLE.model;
+package org.example.model;
 
-import ORG.EXAMPLE.interfaces.ProductBasicInfo;
+import org.example.interfaces.ProductBasicInfo;
 import lombok.Data;
 
 @Data

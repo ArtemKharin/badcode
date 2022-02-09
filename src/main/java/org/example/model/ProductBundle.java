@@ -1,6 +1,6 @@
-package ORG.EXAMPLE.model;
+package org.example.model;
 
-import ORG.EXAMPLE.interfaces.ProductAmountInBundle;
+import org.example.interfaces.ProductAmountInBundle;
 import lombok.Setter;
 
 @Setter

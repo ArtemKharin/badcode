@@ -1,13 +1,13 @@
-package ORG.EXAMPLE.model;
+package org.example.model;
 
-import ORG.EXAMPLE.interfaces.ProductAddressGeneratorForNotification;
+import org.example.interfaces.ProductAddressGeneratorForNotification;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class NotifiableProduct extends Product implements ProductAddressGeneratorForNotification {
-    private int counter = 1;
+    private  static int counter = 1;
     private String channel;
 
 

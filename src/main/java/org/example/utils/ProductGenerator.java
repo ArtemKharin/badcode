@@ -1,8 +1,8 @@
-package ORG.EXAMPLE.utils;
+package org.example.utils;
 
-import ORG.EXAMPLE.model.NotifiableProduct;
-import ORG.EXAMPLE.model.Product;
-import ORG.EXAMPLE.model.ProductBundle;
+import org.example.model.NotifiableProduct;
+import org.example.model.ProductBundle;
+import org.example.model.Product;
 
 import java.util.Random;
 
